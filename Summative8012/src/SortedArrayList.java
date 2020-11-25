@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class SortedArrayList<E> extends ArrayList {
+public class SortedArrayList<User> extends ArrayList {
 
 
 

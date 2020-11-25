@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class User {
+public class User{
 
     // Fields
     private String firstName;
