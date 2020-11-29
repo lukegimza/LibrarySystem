@@ -1,6 +1,8 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class User{
+public class User implements Comparable<User> {
 
     // Fields
     private String firstName;
@@ -35,7 +37,6 @@ public class User{
         firstName = nameFirst;
         surname = nameLast;
     }
-
     // Getters if required
     public String getFirstName(){
         return firstName;
@@ -47,4 +48,13 @@ public class User{
         return firstName + " " + surname;
     }
 
+    // Compare-To Ordering
+    @Override
+    public int compareTo(User u) {
+        int surCmp = surname.compareTo(u.surname);
+        if (surCmp != 0) return surCmp;
+        int firstCmp = firstName.compareTo(u.firstName);
+        if (firstCmp != 0) return firstCmp;
+        else return 0;
+    }
 }
