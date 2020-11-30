@@ -7,15 +7,18 @@ public class User implements Comparable<User> {
     // Fields
     private String firstName;
     private String surname;
+    private int bookAmount;
+    private int maxBooks = 3;
 
     // Constructors
     public User(){
         firstName = "";
         surname = "";
     }
-    public User(String nameFirst, String nameLast){
+    public User(String nameFirst, String nameLast, int bookAmt){
         firstName = nameFirst;
         surname = nameLast;
+        bookAmount = bookAmt;
     }
 
     // Printing
@@ -45,16 +48,26 @@ public class User implements Comparable<User> {
         return surname;
     }
     public String toString(){
-        return firstName + " " + surname;
+        return firstName + " " + surname + " - " + bookAmount + " book(s)";
     }
-
     // Compare-To Ordering
     @Override
     public int compareTo(User u) {
         int surCmp = surname.compareTo(u.surname);
-        if (surCmp != 0) return surCmp;
+        if (surCmp != 0)
+            return surCmp;
         int firstCmp = firstName.compareTo(u.firstName);
-        if (firstCmp != 0) return firstCmp;
+        if (firstCmp != 0)
+            return firstCmp;
         else return 0;
     }
+    // Max book limit
+    public boolean maxBookLimit(){
+        if (bookAmount > 3 || bookAmount < 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

@@ -1,17 +1,3 @@
-
-
-
-
-/* <----- UNCOMMENT...
-
-
-
-
-
-
-
-
-
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -22,53 +8,36 @@ import java.util.*;
 // Call number of books and users using users.size() and books.size()
 public class Driver {
 
-// Fields
-static Scanner s = new Scanner(System.in);
+    // Fields
+    static Scanner s = new Scanner(System.in);
 
-// Constructors
 
-// Main
-public static void main(String[] args) throws FileNotFoundException {
-    PrintWriter outFileList = new PrintWriter("Z:/IntelliJ/8012/Summative/Summative8012/src/libraryListResult.txt");
 
-    printMenu();
 
-    char ch = s.next().charAt(0);
-    s.nextLine();
 
-    while (ch != 'f'){
-        switch (ch){
-            // Process single request slide 41, video 3 (59:49)
-            case 'b': //Book.listBooks();
-                break;
-            case 'u': //User.listUsers();
-                break;
-            case 'i': //if (Library.placeAvailable()){
-            //              Book book = readBookData(Library);
-            //              if (book != null){
-            //                  Library.register(book);
-            //              else
-            //                  System.out.println("This book is already in the Library.");
-            //          }
-            //          else
-            //          System.out.println("Sorry, there is no space available in the Library.");
 
-            //          Library.leaseBook(readNames(), readBooks(), outFileList);
-                break;
-            case 'r': // Use similar to above and also change above a little bit
-            //    Library.returnBook(readNames(), readBooks(), outFileList);
 
-                break;
-            default:
-                System.out.println("Invalid entry, please input a letter labelled above.");
-        }
-        printMenu();
-        ch = s.next().charAt(0);
-        s.nextLine();
-    }
 
-    outFileList.close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+/* <----- UNCOMMENT...
+
+
 
 // Methods
 private static void printMenu(){
@@ -132,7 +101,7 @@ private static void checker(){
 }
 
 
-}
+
 
 
 
