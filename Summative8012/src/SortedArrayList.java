@@ -39,20 +39,20 @@ public class SortedArrayList extends ArrayList{
         users.add(alexa);
         users.add(gerry);
         users.add(sam);
+        users.add(minU(users));
         // Adding books to list
         books.add(starwars);
         books.add(lotr);
         books.add(wow);
         books.add(omam);
         books.add(aic);
+        books.add(minB(books));
         // Sorting // Printing
         System.out.println(users.size());
         System.out.println(users);
         //SortedArrayList.Sweeper(users);
-        System.out.println(minU(users));
         System.out.println(books.size());
         System.out.println(books);
-        System.out.println(minB(books));
     }
 
 
