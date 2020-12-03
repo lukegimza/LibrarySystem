@@ -1,24 +1,27 @@
+import java.io.*;
+import java.util.*;
+
 public class Book implements Comparable<Book>{
 
     // Fields
     private String bookName;
     private String bookAuthor;
-    private boolean loan;
+
 
     // Constructors
     public Book(){
         bookName = "";
         bookAuthor = "";
     }
-    public Book (String bookNm, String bookAu, boolean onLoan){
+    public Book (String bookNm, String bookAu){
         bookName = bookNm;
         bookAuthor = bookAu;
-        loan = onLoan;
     }
 
-    // Methods
+    //**************************************************METHODS*******************************************************//
+
     public String toString() {
-        return bookName + " - " + bookAuthor + ". On loan? - " + loan;
+        return bookName + " - " + bookAuthor;
     }
 
     // Compare-To Ordering

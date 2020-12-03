@@ -1,63 +1,11 @@
+import java.io.*;
+import java.util.*;
 
+public class SortedArrayList<E> extends ArrayList{
 
-import java.util.ArrayList;
-import java.util.Collections;
+    //**************************************************METHODS*******************************************************//
 
-public class SortedArrayList extends ArrayList{
-
-    // Fields
-    private User user;
-    private Book book;
-
-
-    // Constructors
-    public SortedArrayList (User firstElement, Book secondElement){
-        user = firstElement;
-        book = secondElement;
-    }
-
-    // ArrayLists
-    public static void main(String[] args) {
-        // Users
-        User luke = new User ("Luke", "Gimza", 2);
-        User hazel = new User ("Hazel", "Stink", 1);
-        User alexa = new User ("Alexa", "Lynch", 3);
-        User gerry = new User ("Gerry", "Richardson", 2);
-        User sam = new User ("Sam", "Heatley", 2);
-        // Books
-        Book starwars = new Book ("Star Wars", "George Lucas", false);
-        Book lotr = new Book ("Lord of the Rings", "J. R. R. Tolkien", false);
-        Book wow = new Book ("World of Warcraft", "Christie Golden", false);
-        Book omam = new Book ("Of Mice and Men", "John Steinbeck", false);
-        Book aic = new Book ("An Inspector Calls", "J. B. Priestley", false);
-        // List
-        ArrayList<User> users = new ArrayList<User>();
-        ArrayList<Book> books = new ArrayList<Book>();
-        // Adding users to list
-        users.add(luke);
-        users.add(hazel);
-        users.add(alexa);
-        users.add(gerry);
-        users.add(sam);
-        users.add(minU(users));
-        // Adding books to list
-        books.add(starwars);
-        books.add(lotr);
-        books.add(wow);
-        books.add(omam);
-        books.add(aic);
-        books.add(minB(books));
-        // Sorting // Printing
-        System.out.println(users.size());
-        System.out.println(users);
-        //SortedArrayList.Sweeper(users);
-        System.out.println(books.size());
-        System.out.println(books);
-    }
-
-
-    // Methods
-    // Slide 37, Section 2.
+    // Slide 37, Section 2. NEED TO REMOVE STATIC FROM 2 BELOW
     public static <E extends Comparable<E>> E minU (ArrayList<E> u){
         E uSoFar = u.get(0);
         for (E elem: u)
@@ -76,18 +24,4 @@ public class SortedArrayList extends ArrayList{
         }
         return bSoFar;
     }
-
-//    private static void Sweeper (ArrayList<User> users){
-//        for (User u: users){
-//            System.out.println(minU(users));
-//        }
-//    }
-
-
-
-
-
-
-
-
 }

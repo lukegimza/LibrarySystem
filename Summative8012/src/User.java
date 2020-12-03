@@ -1,24 +1,20 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class User implements Comparable<User> {
 
     // Fields
     private String firstName;
     private String surname;
-    private int bookAmount;
-    private int maxBooks = 3;
 
     // Constructors
     public User(){
         firstName = "";
         surname = "";
     }
-    public User(String nameFirst, String nameLast, int bookAmt){
+    public User(String nameFirst, String nameLast){
         firstName = nameFirst;
         surname = nameLast;
-        bookAmount = bookAmt;
     }
 
     // Printing
@@ -35,11 +31,13 @@ public class User implements Comparable<User> {
         return (firstName.equals(otherUser.firstName) && surname.equals(otherUser.surname));
     }
 
-    // Methods
+    //**************************************************METHODS*******************************************************//
+
     public void setFullName (String nameFirst, String nameLast){
         firstName = nameFirst;
         surname = nameLast;
     }
+
     // Getters if required
     public String getFirstName(){
         return firstName;
@@ -48,8 +46,9 @@ public class User implements Comparable<User> {
         return surname;
     }
     public String toString(){
-        return firstName + " " + surname + " - " + bookAmount + " book(s)";
+        return firstName + " " + surname;
     }
+
     // Compare-To Ordering
     @Override
     public int compareTo(User u) {
@@ -61,13 +60,6 @@ public class User implements Comparable<User> {
             return firstCmp;
         else return 0;
     }
-    // Max book limit
-    public boolean maxBookLimit(){
-        if (bookAmount > 3 || bookAmount < 0){
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
 }
