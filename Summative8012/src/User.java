@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class User implements Comparable<User> {
-
     // Fields
     private String firstName;
     private String surname;

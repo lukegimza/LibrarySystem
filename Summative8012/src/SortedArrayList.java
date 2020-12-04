@@ -1,27 +1,22 @@
 import java.io.*;
 import java.util.*;
 
-public class SortedArrayList<E> extends ArrayList{
+public class SortedArrayList <E extends Comparable<? super E>> extends ArrayList<E>{
 
     //**************************************************METHODS*******************************************************//
-
-    // Slide 37, Section 2. NEED TO REMOVE STATIC FROM 2 BELOW
-    public static <E extends Comparable<E>> E minU (ArrayList<E> u){
-        E uSoFar = u.get(0);
-        for (E elem: u)
-            if (elem.compareTo(uSoFar) < 0) {
-                uSoFar = elem;
+    public void insert (E toAdd){
+        this.add(toAdd);
+        for (int i = 1; i < this.size(); i++){
+            E valueU = this.get(i);
+            int j;
+            for (j = i; j > 0; j--){
+                if (this.get(j - 1).compareTo(valueU)<0){
+                    break;
+                } else {
+                    this.set(j, this.get(j-1));
+                }
             }
-        return uSoFar;
-    }
-
-    public static <E extends Comparable<E>> E minB (ArrayList<E> b) {
-        E bSoFar = b.get(0);
-        for (E elem : b){
-            if (elem.compareTo(bSoFar) < 0){
-                bSoFar = elem;
-            }
+        this.set(j, valueU);
         }
-        return bSoFar;
     }
 }

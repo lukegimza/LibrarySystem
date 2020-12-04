@@ -7,7 +7,9 @@ public class Driver {
     static PrintWriter outFile;
     static {
         try {
-            outFile = new PrintWriter("Z:/Normal_Files/University/MScComputerScienceFiles/8012/Summative/Data/results.txt");
+            //outFile = new PrintWriter("Z:/Normal_Files/University/MScComputerScienceFiles/8012/Summative/Data/results.txt");
+            outFile = new PrintWriter(
+                    "results.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -38,20 +40,12 @@ public class Driver {
 
     // Main
     public static void main(String[] args) {
-        //d.runSelection();
-        l.addUser(l.recordUser());
-        l.addBook(l.recordBook());
-        outFile.println(l.getUsers());
-        outFile.println(l.getBooks());
+        d.runSelection();
     }
 
     // Run Selection
     public void runSelection(){
-//        l.addUser(recordUser());
-//        l.addBook(recordBook());
-//        l.getUsers());
-//        l.getBooks());
-
+        l.reader();
         boolean exit = false;
         while (!exit){
             printMenu();
@@ -64,10 +58,15 @@ public class Driver {
                     break;
                 case 'b':
                     System.out.println("Total book information: ");
+                    for (Book b : l.getBooks()){
+                        System.out.println(b);
+                    }
                     break;
                 case 'u':
                     System.out.println("Total user information: ");
-                    l.getUsers();
+                    for (User u : l.getUsers()){
+                        System.out.println(u);
+                    }
                     break;
                 case 'i':
                     System.out.println("Update book loan OUT data: ");
@@ -95,33 +94,8 @@ public class Driver {
         System.out.println("i - Update stored data when a book is issued to a user.");
         System.out.println("r - Update stored data when a user returns a book to the library.");
         System.out.println("--------------------------------");
-        System.out.println("Type your answer in the form of a letter below and press ENTER:");
+        System.out.println("Type your answer in the form of a letter below and press 'ENTER' to continue:");
     }
-    // Read User
-    public static User readUser(){
-        return null;
-    }
-
-
-
-    // Read Book
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
