@@ -4,6 +4,8 @@ import java.util.*;
 public class SortedArrayList <E extends Comparable<? super E>> extends ArrayList<E>{
 
     //**************************************************METHODS*******************************************************//
+
+    // Insertion Method
     public void insert (E toAdd){
         this.add(toAdd);
         for (int i = 1; i < this.size(); i++){

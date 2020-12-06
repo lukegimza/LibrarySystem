@@ -5,6 +5,9 @@ public class Book implements Comparable<Book>{
     // Fields
     private String bookName;
     private String bookAuthor;
+    public boolean loan = false;
+    public User userLoaned = null;
+
 
     // Constructors
     public Book(){
@@ -18,15 +21,39 @@ public class Book implements Comparable<Book>{
 
     //**************************************************METHODS*******************************************************//
 
+    public String toString() {
+        String checkMessage = "Available";
+        if (loan == true){
+            checkMessage = "Not " + checkMessage + " - Current Holder: " + userLoaned + ".";
+        }
+        return bookName + " - " + bookAuthor + ":\n"
+                + checkMessage;
+    }
+
+    public void setUser(User user){
+        if (userLoaned == null){
+            userLoaned = user;
+            loan = true;
+        }
+    }
+
+    public void setUserNull(){
+        userLoaned = null;
+        loan = false;
+    }
+
+    public User getLoner(){
+        return userLoaned;
+    }
+
+    public String getBookInfo(){
+        return bookName + " - " + bookAuthor + ".";
+    }
+
     public String splitLN(){
         String[] elements = bookAuthor.split(" ");
         return elements[elements.length - 1];
     }
-
-    public String toString() {
-        return bookName + " - " + bookAuthor;
-    }
-
     // Compare-To Ordering
     @Override
     public int compareTo(Book b) {

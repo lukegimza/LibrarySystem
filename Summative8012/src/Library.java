@@ -10,9 +10,6 @@ public class Library {
     public SortedArrayList<Book> books = new SortedArrayList<Book>();
 
     // Fields
-    private int bookAmount;
-    private int maxBooks = 3;
-    private boolean loan;
 
     // Constructors
     public Library() throws FileNotFoundException {
@@ -32,20 +29,24 @@ public class Library {
             users.insert(new User(elem[0], elem[1]));
         }
     }
-    // Max book limit
-    public boolean maxBookLimit(){
-        if (bookAmount > 3 || bookAmount < 0){
-            return true;
-        } else {
-            return false;
-        }
-    }
     // Getters
-    public ArrayList<User> getUsers () {
+    public ArrayList<User> getUsers() {
         return users;
     }
     public ArrayList<Book> getBooks(){
         return books;
     }
 
+    public void reminder (PrintWriter p, User u, Book b){
+        p.println("Dear,");
+        p.println(books.get(books.indexOf(Driver.bookSearch(b))).getLoner().getFullName());
+        p.println("The book you have loaned:");
+        p.println("'" + books.get(books.indexOf(Driver.bookSearch(b))).getBookInfo() + "'");
+        p.println("Has been requested by another user.");
+        p.println("Please return it as soon as possible.");
+        p.println("Thank you for your cooperation:");
+        p.println("The Library.");
+
+        p.flush();
+    }
 }

@@ -2,9 +2,19 @@ import java.io.*;
 import java.util.*;
 
 public class User implements Comparable<User> {
+    // Users List
+    public void usersList () {
+        ArrayList<User> zoeB = new ArrayList<>();
+        ArrayList<User> annaB = new ArrayList<>();
+        ArrayList<User> johnS = new ArrayList<>();
+        ArrayList<User> johnW = new ArrayList<>();
+    }
+
     // Fields
     private String firstName;
     private String surname;
+    private int bookAmount = 0;
+    private int maxbk = 3;
 
     // Constructors
     public User(){
@@ -26,9 +36,6 @@ public class User implements Comparable<User> {
     public void printSmallName (PrintWriter p){
         p.print(printFullNameInitials() + ". " + surname);
     }
-    public boolean equalTo (User otherUser){
-        return (firstName.equals(otherUser.firstName) && surname.equals(otherUser.surname));
-    }
 
     //**************************************************METHODS*******************************************************//
 
@@ -38,6 +45,9 @@ public class User implements Comparable<User> {
     }
 
     // Getters if required
+    public String getFullName (){
+        return firstName + " " + surname + ".";
+    }
     public String getFirstName(){
         return firstName;
     }
@@ -45,7 +55,12 @@ public class User implements Comparable<User> {
         return surname;
     }
     public String toString(){
-        return firstName + " " + surname;
+        String bookAmtMessage = "Book amount: " + bookAmount;
+        if (bookAmount >= maxbk) {
+
+        }
+        return firstName + " " + surname + ".\n"
+                + bookAmtMessage;
     }
 
     // Compare-To Ordering
@@ -60,5 +75,19 @@ public class User implements Comparable<User> {
         else return 0;
     }
 
+    public void increment (){
+        if (bookAmount < 3){
+            bookAmount++;
+        }
+    }
 
+    public void decrement (){
+        if (bookAmount > 0){
+            bookAmount--;
+        }
+    }
+
+    public int getBookAmount(){
+        return bookAmount;
+    }
 }
