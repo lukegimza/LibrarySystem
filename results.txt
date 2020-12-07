@@ -1,8 +1,36 @@
 Dear,
-Zoe Brown.
+John Williams.
 The book you have loaned:
-'Concurrent Programming - C. R. Snow.'
-Has been requested by another user.
-Please return it as soon as possible.
+	'Concurrent Programming - Stephen J. Hartley.'
+	Has been requested by another user.
+	Please return it as soon as possible.
+
 Thank you for your cooperation:
 The Library.
+
+______________
+
+Dear,
+Anna Smith.
+The book you have loaned:
+	'Petri Nets - Wolfgang Reisig.'
+	Has been requested by another user.
+	Please return it as soon as possible.
+
+Thank you for your cooperation:
+The Library.
+
+______________
+
+Dear,
+Zoe Brown.
+The book you have loaned:
+	'Concurrent Programming - C. R. Snow.'
+	Has been requested by another user.
+	Please return it as soon as possible.
+
+Thank you for your cooperation:
+The Library.
+
+______________
+

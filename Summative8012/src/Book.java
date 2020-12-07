@@ -2,14 +2,18 @@ import java.io.*;
 import java.util.*;
 
 public class Book implements Comparable<Book>{
-    // Fields
+
+    //**************************************************FIELDS********************************************************//
+
     private String bookName;
     private String bookAuthor;
     public boolean loan = false;
     public User userLoaned = null;
 
+    //**************************************************ARRAYLISTS-[NONE]*********************************************//
 
-    // Constructors
+    //**************************************************CONSTRUCTORS**************************************************//
+
     public Book(){
         bookName = "";
         bookAuthor = "";
@@ -19,8 +23,31 @@ public class Book implements Comparable<Book>{
         bookAuthor = bookAu;
     }
 
+    //**************************************************MAIN-[NONE]***************************************************//
+
     //**************************************************METHODS*******************************************************//
 
+    // Set Methods
+    public void setUser(User user){
+        if (userLoaned == null){
+            userLoaned = user;
+            loan = true;
+        }
+    }
+    public void setUserNull(){
+        userLoaned = null;
+        loan = false;
+    }
+
+    // Getters (If required)
+    public User getLoner(){
+        return userLoaned;
+    }
+    public String getBookInfo(){
+        return bookName + " - " + bookAuthor + ".";
+    }
+
+    // Book Output-[To-String]
     public String toString() {
         String checkMessage = "Available";
         if (loan == true){
@@ -30,30 +57,12 @@ public class Book implements Comparable<Book>{
                 + checkMessage;
     }
 
-    public void setUser(User user){
-        if (userLoaned == null){
-            userLoaned = user;
-            loan = true;
-        }
-    }
-
-    public void setUserNull(){
-        userLoaned = null;
-        loan = false;
-    }
-
-    public User getLoner(){
-        return userLoaned;
-    }
-
-    public String getBookInfo(){
-        return bookName + " - " + bookAuthor + ".";
-    }
-
+    // Split Line
     public String splitLN(){
         String[] elements = bookAuthor.split(" ");
         return elements[elements.length - 1];
     }
+
     // Compare-To Ordering
     @Override
     public int compareTo(Book b) {
